@@ -7,8 +7,10 @@ public class MainFrame extends JFrame implements Runnable {
 
     JPanel mainPanel = new JPanel();
     JPanel signInLabel = new JPanel();
+    JPanel footerPanel = new JPanel();
 
     JLabel mainText;
+    JLabel footerText;
 
     @Override
     public void run()
@@ -29,18 +31,28 @@ public class MainFrame extends JFrame implements Runnable {
     public void configurateDesign()
     {
         setContentPane(mainPanel);
+        mainText = new JLabel("Bank of Rankov");
+        footerText = new JLabel("© All rights reserved to Alexander Rankov 2025.");
+
         mainPanel.setLayout(new BorderLayout());
-        mainPanel.add(new PanelControl(), BorderLayout.CENTER);
         mainPanel.add(signInLabel);
+        mainPanel.add(footerPanel, BorderLayout.PAGE_END);
+
+
         mainPanel.setBorder(BorderFactory.createLineBorder(Color.black,3));
 
         signInLabel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
+        signInLabel.add(mainText, BorderLayout.CENTER);
+        signInLabel.add(new PanelControl(), BorderLayout.CENTER);
 
+        footerPanel.setBorder(BorderFactory.createLineBorder(Color.RED, 3));
+        footerPanel.setPreferredSize(new Dimension(1920, 150));
+        footerPanel.add(footerText);
 
-        mainText = new JLabel("Bank of Rankov");
         mainText.setForeground(new Color(0x0077ff));
-        mainText.setHorizontalAlignment(JLabel.CENTER);
-        mainPanel.add(mainText, BorderLayout.LINE_START);
+        mainText.setHorizontalAlignment(SwingConstants.CENTER);
+
+        footerText.setVerticalAlignment(SwingConstants.CENTER);
     }
 
 }
