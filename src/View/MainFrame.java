@@ -47,12 +47,14 @@ public class MainFrame extends JFrame implements Runnable {
 
         footerPanel.setBorder(BorderFactory.createLineBorder(Color.RED, 3));
         footerPanel.setPreferredSize(new Dimension(1920, 150));
+        footerPanel.setBackground(ColorPalette.MAIN_COLOR);
         footerPanel.add(footerText);
 
-        mainText.setForeground(new Color(0x0077ff));
+        mainText.setForeground(ColorPalette.MAIN_COLOR);
         mainText.setHorizontalAlignment(SwingConstants.CENTER);
 
         footerText.setVerticalAlignment(SwingConstants.CENTER);
+        footerText.setForeground(ColorPalette.SECONDAR_COLOR);
     }
 
 }
