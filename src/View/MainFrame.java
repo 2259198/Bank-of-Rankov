@@ -14,6 +14,7 @@ public class MainFrame extends JFrame implements Runnable {
     {
         configurateWindow();
         configurateDesign();
+        this.setVisible(true);
     }
 
     public void configurateWindow()
@@ -22,17 +23,19 @@ public class MainFrame extends JFrame implements Runnable {
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setTitle("Bank of Rankov");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setVisible(true);
     }
 
     public void configurateDesign()
     {
         mainPanel.setLayout(new BorderLayout());
+        mainPanel.add(new PanelControl(), BorderLayout.CENTER);
 
         mainText = new JLabel("Bank of Rankov");
         mainText.setForeground(new Color(0x0077ff));
+        mainText.setHorizontalAlignment(JLabel.CENTER);
 
-        add(mainText);
+        add(mainPanel, BorderLayout.CENTER);
+        add(mainText, BorderLayout.CENTER);
     }
 
 }
