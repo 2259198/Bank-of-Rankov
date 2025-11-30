@@ -1,6 +1,7 @@
 package View;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class PanelControl extends JPanel{
 
@@ -13,6 +14,7 @@ public class PanelControl extends JPanel{
 
     public void configuratePanelControl()
     {
+        signInButton.setSize(new Dimension(150,30));
         add(signInButton);
     }
 
