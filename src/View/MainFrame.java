@@ -37,7 +37,7 @@ public class MainFrame extends JFrame implements Runnable {
         mainPanel.setLayout(new BorderLayout());
         mainPanel.add(signInLabel);
         mainPanel.add(footerPanel, BorderLayout.PAGE_END);
-
+        mainPanel.setBackground(ColorPalette.SECONDARY_COLOR);
 
         mainPanel.setBorder(BorderFactory.createLineBorder(Color.black,3));
 
@@ -54,7 +54,7 @@ public class MainFrame extends JFrame implements Runnable {
         mainText.setHorizontalAlignment(SwingConstants.CENTER);
 
         footerText.setVerticalAlignment(SwingConstants.CENTER);
-        footerText.setForeground(ColorPalette.SECONDAR_COLOR);
+        footerText.setForeground(ColorPalette.SECONDARY_COLOR);
     }
 
 }
