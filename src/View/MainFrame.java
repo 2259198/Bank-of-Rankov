@@ -34,6 +34,9 @@ public class MainFrame extends JFrame implements Runnable {
         mainText = new JLabel("Bank of Rankov");
         footerText = new JLabel("© All rights reserved to Alexander Rankov 2025.");
 
+        mainText.setFont(FontPalette.MAIN_FONT);
+        footerText.setFont(FontPalette.READING_FONT);
+
         mainPanel.setLayout(new BorderLayout());
         mainPanel.add(signInLabel);
         mainPanel.add(footerPanel, BorderLayout.PAGE_END);
