@@ -2,11 +2,18 @@ package View;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class PanelControl extends JPanel{
+public class PanelControl extends JPanel implements ActionListener {
 
     JLabel imageLogo;
     JLabel welcomeText;
+
+
+    JTextField userName = new JTextField(10);
+    JTextField password = new JTextField(10);
+
 
     JButton signInButton = new JButton("Sign in");
     JButton createAccountButton = new JButton("Create account");
@@ -34,8 +41,27 @@ public class PanelControl extends JPanel{
         imageLogo.setIcon(logo);
         //imageLogo.setPreferredSize(new Dimension(150, 150));
 
+        userName.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String input = userName.getText();
+                System.out.println("The user entered : " + input);
+            }
+        });
+
+        password.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                String input = password.getText();
+                System.out.println("The username's password is : " + input);
+            }
+    });
+
         add(imageLogo);
         add(welcomeText);
+        add(userName);
+        add(password);
         add(signInButton);
         add(createAccountButton);
     }
@@ -46,4 +72,8 @@ public class PanelControl extends JPanel{
         createAccountButton.setSize(new Dimension(150, 30));
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 }
