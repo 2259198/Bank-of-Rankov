@@ -5,9 +5,12 @@ import java.awt.*;
 
 public class MainFrame extends JFrame implements Runnable {
 
+
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
     JPanel mainPanel = new JPanel();
     JPanel signInLabel = new JPanel();
-    JPanel footerPanel = new JPanel();
+    JPanel footerPanel = new JPanel(new GridBagLayout());
 
     JLabel mainText;
     JLabel footerText;
@@ -47,7 +50,7 @@ public class MainFrame extends JFrame implements Runnable {
         mainText.setForeground(ColorPalette.MAIN_COLOR);
         mainText.setHorizontalAlignment(SwingConstants.CENTER);
 
-        footerText.setFont(FontPalette.READING_FONT);
+        footerText.setFont(FontPalette.FOOTER_FONT);
         footerText.setVerticalAlignment(SwingConstants.CENTER);
         footerText.setForeground(ColorPalette.SECONDARY_COLOR);
     }
@@ -75,7 +78,7 @@ public class MainFrame extends JFrame implements Runnable {
 
     public void footerPanel()
     {
-        footerPanel.setPreferredSize(new Dimension(1920, 150));
+        footerPanel.setPreferredSize(new Dimension(screenSize.width, 100));
         footerPanel.setBackground(ColorPalette.MAIN_COLOR);
         footerPanel.add(footerText);
     }

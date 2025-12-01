@@ -41,6 +41,25 @@ public class PanelControl extends JPanel implements ActionListener {
         imageLogo.setIcon(logo);
         //imageLogo.setPreferredSize(new Dimension(150, 150));
 
+        inputTextFieldActionListener();
+        buttonsActionListener();
+
+        add(imageLogo);
+        add(welcomeText);
+        add(userName);
+        add(password);
+        add(signInButton);
+        add(createAccountButton);
+    }
+
+    public void buttonSizes()
+    {
+        signInButton.setSize(new Dimension(150,30));
+        createAccountButton.setSize(new Dimension(150, 30));
+    }
+
+    public void inputTextFieldActionListener()
+    {
         userName.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -56,20 +75,25 @@ public class PanelControl extends JPanel implements ActionListener {
                 String input = password.getText();
                 System.out.println("The username's password is : " + input);
             }
-    });
-
-        add(imageLogo);
-        add(welcomeText);
-        add(userName);
-        add(password);
-        add(signInButton);
-        add(createAccountButton);
+        });
     }
 
-    public void buttonSizes()
+    public void buttonsActionListener()
     {
-        signInButton.setSize(new Dimension(150,30));
-        createAccountButton.setSize(new Dimension(150, 30));
+        signInButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                System.out.println("Clicked");
+            }
+        });
+
+        createAccountButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Clicked 2.0");
+            }
+        });
     }
 
     @Override
