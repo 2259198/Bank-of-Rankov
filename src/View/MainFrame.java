@@ -34,30 +34,50 @@ public class MainFrame extends JFrame implements Runnable {
         mainText = new JLabel("Bank of Rankov");
         footerText = new JLabel("© All rights reserved to Alexander Rankov 2025.");
 
-        mainText.setFont(FontPalette.MAIN_FONT);
-        footerText.setFont(FontPalette.READING_FONT);
+        fontsLogic();
+        borderIdentification();
+        mainPanel();
+        signInPanel();
+        footerPanel();
+    }
 
+    public void fontsLogic()
+    {
+        mainText.setFont(FontPalette.MAIN_FONT);
+        mainText.setForeground(ColorPalette.MAIN_COLOR);
+        mainText.setHorizontalAlignment(SwingConstants.CENTER);
+
+        footerText.setFont(FontPalette.READING_FONT);
+        footerText.setVerticalAlignment(SwingConstants.CENTER);
+        footerText.setForeground(ColorPalette.SECONDARY_COLOR);
+    }
+
+    public void borderIdentification()
+    {
+        mainPanel.setBorder(BorderFactory.createLineBorder(Color.black,3));
+        signInLabel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
+        footerPanel.setBorder(BorderFactory.createLineBorder(Color.RED, 3));
+    }
+
+    public void mainPanel()
+    {
         mainPanel.setLayout(new BorderLayout());
         mainPanel.add(signInLabel);
         mainPanel.add(footerPanel, BorderLayout.PAGE_END);
         mainPanel.setBackground(ColorPalette.SECONDARY_COLOR);
+    }
 
-        mainPanel.setBorder(BorderFactory.createLineBorder(Color.black,3));
-
-        signInLabel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
+    public void signInPanel()
+    {
         signInLabel.add(mainText, BorderLayout.CENTER);
         signInLabel.add(new PanelControl(), BorderLayout.CENTER);
+    }
 
-        footerPanel.setBorder(BorderFactory.createLineBorder(Color.RED, 3));
+    public void footerPanel()
+    {
         footerPanel.setPreferredSize(new Dimension(1920, 150));
         footerPanel.setBackground(ColorPalette.MAIN_COLOR);
         footerPanel.add(footerText);
-
-        mainText.setForeground(ColorPalette.MAIN_COLOR);
-        mainText.setHorizontalAlignment(SwingConstants.CENTER);
-
-        footerText.setVerticalAlignment(SwingConstants.CENTER);
-        footerText.setForeground(ColorPalette.SECONDARY_COLOR);
     }
 
 }
