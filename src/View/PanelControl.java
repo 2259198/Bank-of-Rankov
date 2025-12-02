@@ -14,8 +14,8 @@ public class PanelControl extends JPanel implements ActionListener {
     JLabel welcomeText;
     JPanel buttonRow;
 
-    JTextField userName = new JTextField(5);
-    JTextField password = new JTextField(5);
+    JTextField userName = new JTextField(1);
+    JTextField password = new JTextField(1);
 
     JButton signInButton = new JButton("Sign in");
     JButton createAccountButton = new JButton("Create account");
@@ -48,7 +48,6 @@ public class PanelControl extends JPanel implements ActionListener {
         mainText = new JLabel("Bank of Rankov");
         mainText.setFont(FontPalette.MAIN_FONT);
         mainText.setForeground(ColorPalette.MAIN_COLOR);
-        mainText.setHorizontalAlignment(SwingConstants.CENTER);
 
         add(mainText, BorderLayout.CENTER);
     }
@@ -56,21 +55,29 @@ public class PanelControl extends JPanel implements ActionListener {
     public void welcomeTextLogic()
     {
         welcomeText = new JLabel("Welcome to the bank of Rankov");
-        add(welcomeText);
+
+        add(welcomeText, BorderLayout.CENTER);
     }
 
     public void logoLogic()
     {
         imageLogo = new JLabel();
         imageLogo.setIcon(logo);
-        imageLogo.setHorizontalAlignment(JLabel.CENTER);
-        add(imageLogo);
+        imageLogo.setHorizontalAlignment(SwingConstants.CENTER);
+        add(imageLogo, BorderLayout.CENTER);
 
         logo.setDescription("This is the logo of my fictional banking company");
     }
 
     public void inputTextFieldLogic()
     {
+
+        userName.setFont(FontPalette.READING_FONT);
+        //userName.setText("Username");
+        userName.setPreferredSize(buttonDimension);
+
+        password.setFont(FontPalette.READING_FONT);
+
         add(userName);
         add(password);
     }
