@@ -7,15 +7,15 @@ import java.awt.event.ActionListener;
 
 public class PanelControl extends JPanel implements ActionListener {
 
+    Dimension buttonDimension = new Dimension(150,30);
+
     JLabel mainText;
     JLabel imageLogo;
     JLabel welcomeText;
     JPanel buttonRow;
 
-
     JTextField userName = new JTextField(5);
     JTextField password = new JTextField(5);
-
 
     JButton signInButton = new JButton("Sign in");
     JButton createAccountButton = new JButton("Create account");
@@ -32,47 +32,68 @@ public class PanelControl extends JPanel implements ActionListener {
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
+        mainTextLogic();
+        logoLogic();
+        welcomeTextLogic();
+        inputTextFieldLogic();
         buttonSizes();
+        inputTextFieldActionListener();
+        buttonsActionListener();
+        buttonDesign();
+        buttonRowLogic();
+    }
 
+    public void mainTextLogic()
+    {
         mainText = new JLabel("Bank of Rankov");
         mainText.setFont(FontPalette.MAIN_FONT);
         mainText.setForeground(ColorPalette.MAIN_COLOR);
         mainText.setHorizontalAlignment(SwingConstants.CENTER);
 
         add(mainText, BorderLayout.CENTER);
+    }
 
+    public void welcomeTextLogic()
+    {
         welcomeText = new JLabel("Welcome to the bank of Rankov");
+        add(welcomeText);
+    }
 
-        signInButton.setHorizontalAlignment(JLabel.CENTER);
-        logo.setDescription("This is the logo of my fictional banking company");
-
-        signInButton.setFont(FontPalette.READING_FONT);
-        createAccountButton.setFont(FontPalette.READING_FONT);
-
+    public void logoLogic()
+    {
         imageLogo = new JLabel();
         imageLogo.setIcon(logo);
-        //imageLogo.setPreferredSize(new Dimension(150, 150));
-
-
+        imageLogo.setHorizontalAlignment(JLabel.CENTER);
         add(imageLogo);
-        add(welcomeText);
+
+        logo.setDescription("This is the logo of my fictional banking company");
+    }
+
+    public void inputTextFieldLogic()
+    {
         add(userName);
         add(password);
-
-        buttonRow = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 0));
-        buttonRow.add(signInButton);
-        buttonRow.add(createAccountButton);
-
-        add(buttonRow);
-
-        inputTextFieldActionListener();
-        buttonsActionListener();
     }
 
     public void buttonSizes()
     {
-        signInButton.setSize(new Dimension(150,30));
-        createAccountButton.setSize(new Dimension(150, 30));
+        signInButton.setSize(buttonDimension);
+        createAccountButton.setSize(buttonDimension);
+    }
+
+    public void buttonDesign()
+    {
+        signInButton.setFont(FontPalette.READING_FONT);
+
+        createAccountButton.setFont(FontPalette.READING_FONT);
+    }
+
+    public void buttonRowLogic()
+    {
+        buttonRow = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 30));
+        buttonRow.add(signInButton);
+        buttonRow.add(createAccountButton);
+        add(buttonRow);
     }
 
     public void inputTextFieldActionListener()
