@@ -7,12 +7,14 @@ import java.awt.event.ActionListener;
 
 public class PanelControl extends JPanel implements ActionListener {
 
+    JLabel mainText;
     JLabel imageLogo;
     JLabel welcomeText;
+    JPanel buttonRow;
 
 
-    JTextField userName = new JTextField(10);
-    JTextField password = new JTextField(10);
+    JTextField userName = new JTextField(5);
+    JTextField password = new JTextField(5);
 
 
     JButton signInButton = new JButton("Sign in");
@@ -27,7 +29,17 @@ public class PanelControl extends JPanel implements ActionListener {
 
     public void configuratePanelControl()
     {
+
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
         buttonSizes();
+
+        mainText = new JLabel("Bank of Rankov");
+        mainText.setFont(FontPalette.MAIN_FONT);
+        mainText.setForeground(ColorPalette.MAIN_COLOR);
+        mainText.setHorizontalAlignment(SwingConstants.CENTER);
+
+        add(mainText, BorderLayout.CENTER);
 
         welcomeText = new JLabel("Welcome to the bank of Rankov");
 
@@ -41,15 +53,20 @@ public class PanelControl extends JPanel implements ActionListener {
         imageLogo.setIcon(logo);
         //imageLogo.setPreferredSize(new Dimension(150, 150));
 
-        inputTextFieldActionListener();
-        buttonsActionListener();
 
         add(imageLogo);
         add(welcomeText);
         add(userName);
         add(password);
-        add(signInButton);
-        add(createAccountButton);
+
+        buttonRow = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 0));
+        buttonRow.add(signInButton);
+        buttonRow.add(createAccountButton);
+
+        add(buttonRow);
+
+        inputTextFieldActionListener();
+        buttonsActionListener();
     }
 
     public void buttonSizes()

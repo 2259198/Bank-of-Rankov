@@ -12,7 +12,7 @@ public class MainFrame extends JFrame implements Runnable {
     JPanel signInLabel = new JPanel();
     JPanel footerPanel = new JPanel(new GridBagLayout());
 
-    JLabel mainText;
+
     JLabel footerText;
 
     @Override
@@ -34,7 +34,6 @@ public class MainFrame extends JFrame implements Runnable {
     public void configurateDesign()
     {
         setContentPane(mainPanel);
-        mainText = new JLabel("Bank of Rankov");
         footerText = new JLabel("© All rights reserved to Alexander Rankov 2025.");
 
         fontsLogic();
@@ -46,10 +45,6 @@ public class MainFrame extends JFrame implements Runnable {
 
     public void fontsLogic()
     {
-        mainText.setFont(FontPalette.MAIN_FONT);
-        mainText.setForeground(ColorPalette.MAIN_COLOR);
-        mainText.setHorizontalAlignment(SwingConstants.CENTER);
-
         footerText.setFont(FontPalette.FOOTER_FONT);
         footerText.setVerticalAlignment(SwingConstants.CENTER);
         footerText.setForeground(ColorPalette.SECONDARY_COLOR);
@@ -72,7 +67,6 @@ public class MainFrame extends JFrame implements Runnable {
 
     public void signInPanel()
     {
-        signInLabel.add(mainText, BorderLayout.CENTER);
         signInLabel.add(new PanelControl(), BorderLayout.CENTER);
     }
 
