@@ -1,6 +1,7 @@
 package View;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -54,12 +55,14 @@ public class PanelControl extends JPanel implements ActionListener {
         mainText.setFont(FontPalette.MAIN_FONT);
         mainText.setForeground(ColorPalette.MAIN_COLOR);
 
-        add(mainText, BorderLayout.CENTER);
+        add(mainText);
     }
 
     public void welcomeTextLogic()
     {
         welcomeText = new JLabel("Welcome to the bank of Rankov");
+        welcomeText.setHorizontalAlignment(SwingConstants.CENTER);
+        welcomeText.setBorder(new EmptyBorder(20,0,20,0));
 
         add(welcomeText, BorderLayout.CENTER);
     }
