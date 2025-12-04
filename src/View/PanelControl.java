@@ -17,7 +17,7 @@ public class PanelControl extends JPanel implements ActionListener {
     JTextField userName = new JTextField(1);
     JTextField password = new JTextField(1);
 
-    JButton signInButton = new JButton("Sign in");
+    //JButton signInButton = new JButton("Sign in");
     JButton createAccountButton = new JButton("Create account");
 
     ImageIcon logo = new ImageIcon("src/Images/Logo.png");
@@ -84,13 +84,13 @@ public class PanelControl extends JPanel implements ActionListener {
 
     public void buttonSizes()
     {
-        signInButton.setSize(buttonDimension);
+        //signInButton.setSize(buttonDimension);
         createAccountButton.setSize(buttonDimension);
     }
 
     public void buttonDesign()
     {
-        signInButton.setFont(FontPalette.READING_FONT);
+        //signInButton.setFont(FontPalette.READING_FONT);
 
         createAccountButton.setFont(FontPalette.READING_FONT);
     }
@@ -98,7 +98,7 @@ public class PanelControl extends JPanel implements ActionListener {
     public void buttonRowLogic()
     {
         buttonRow = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 30));
-        buttonRow.add(signInButton);
+        //buttonRow.add(signInButton);
         buttonRow.add(createAccountButton);
         add(buttonRow);
     }
@@ -125,18 +125,19 @@ public class PanelControl extends JPanel implements ActionListener {
 
     public void buttonsActionListener()
     {
-        signInButton.addActionListener(new ActionListener() {
+        /*signInButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)
             {
                 System.out.println("Clicked");
             }
         });
+         */
 
         createAccountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Clicked 2.0");
+                System.out.println("Clicked");
             }
         });
     }
