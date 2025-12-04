@@ -9,7 +9,8 @@ public class MainFrame extends JFrame implements Runnable {
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     JPanel mainPanel = new JPanel();
-    JPanel signInLabel = new JPanel();
+    JPanel createAccountPanel = new JPanel();
+    JPanel signInAccountPanel = new JPanel();
     JPanel footerPanel = new JPanel(new GridBagLayout());
 
 
@@ -34,7 +35,6 @@ public class MainFrame extends JFrame implements Runnable {
     public void configurateDesign()
     {
         setContentPane(mainPanel);
-        footerText = new JLabel("© All rights reserved to Alexander Rankov 2025.");
 
         fontsLogic();
         borderIdentification();
@@ -45,6 +45,7 @@ public class MainFrame extends JFrame implements Runnable {
 
     public void fontsLogic()
     {
+        footerText = new JLabel("© All rights reserved to Alexander Rankov 2025.");
         footerText.setFont(FontPalette.FOOTER_FONT);
         footerText.setVerticalAlignment(SwingConstants.CENTER);
         footerText.setForeground(ColorPalette.SECONDARY_COLOR);
@@ -53,21 +54,22 @@ public class MainFrame extends JFrame implements Runnable {
     public void borderIdentification()
     {
         mainPanel.setBorder(BorderFactory.createLineBorder(Color.black,3));
-        signInLabel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
+        createAccountPanel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
+        signInAccountPanel.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
         footerPanel.setBorder(BorderFactory.createLineBorder(Color.RED, 3));
     }
 
     public void mainPanel()
     {
         mainPanel.setLayout(new BorderLayout());
-        mainPanel.add(signInLabel);
+        mainPanel.add(createAccountPanel);
         mainPanel.add(footerPanel, BorderLayout.PAGE_END);
         mainPanel.setBackground(ColorPalette.SECONDARY_COLOR);
     }
 
     public void signInPanel()
     {
-        signInLabel.add(new PanelControl(this, signInLabel), BorderLayout.CENTER);
+        createAccountPanel.add(new PanelControl(this, createAccountPanel), BorderLayout.CENTER);
     }
 
     public void footerPanel()

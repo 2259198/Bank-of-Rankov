@@ -15,7 +15,7 @@ public class PanelControl extends JPanel implements ActionListener {
     JPanel buttonRow;
 
     private MainFrame mainFrame;
-    private JPanel signInPanel;
+    private JPanel createAccountPanel;
 
     JTextField userName = new JTextField(1);
     JTextField password = new JTextField(1);
@@ -25,10 +25,10 @@ public class PanelControl extends JPanel implements ActionListener {
 
     ImageIcon logo = new ImageIcon("src/Images/Logo.png");
 
-    public PanelControl(MainFrame mainFrame, JPanel signInPanel)
+    public PanelControl(MainFrame mainFrame, JPanel createAccountPanel)
     {
         this.mainFrame = mainFrame;
-        this.signInPanel = signInPanel;
+        this.createAccountPanel = createAccountPanel;
         configuratePanelControl();
     }
 
@@ -142,8 +142,7 @@ public class PanelControl extends JPanel implements ActionListener {
         createAccountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Clicked");
-                signInPanel.setVisible(false);
+                createAccountPanel.setVisible(false);
             }
         });
     }
