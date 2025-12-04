@@ -67,7 +67,7 @@ public class MainFrame extends JFrame implements Runnable {
 
     public void signInPanel()
     {
-        signInLabel.add(new PanelControl(), BorderLayout.CENTER);
+        signInLabel.add(new PanelControl(this, signInLabel), BorderLayout.CENTER);
     }
 
     public void footerPanel()
