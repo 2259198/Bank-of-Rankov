@@ -9,8 +9,8 @@ public class SignInPanelControl extends JPanel {
 
     private MainFrame mainFrame;
 
-    JTextField username;
-    JTextField passwordConfirmation;
+    JTextField username = new JTextField();
+    JTextField passwordConfirmation = new JTextField();
 
     JButton signInButton = new JButton("Sign in");
 
@@ -33,6 +33,9 @@ public class SignInPanelControl extends JPanel {
                 System.out.println("Clicked");
             }
         });
+
+        add(username);
+        add(passwordConfirmation);
     }
 
 }
