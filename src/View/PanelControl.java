@@ -85,8 +85,13 @@ public class PanelControl extends JPanel implements ActionListener {
 
         userName.setFont(FontPalette.READING_FONT);
         userName.setPreferredSize(buttonDimension);
+        userName.setForeground(ColorPalette.MAIN_COLOR);
+        userName.setToolTipText("Enter your username");
+        userName.setMargin(new Insets(5,10,5,10));
 
         password.setFont(FontPalette.READING_FONT);
+        password.setPreferredSize(buttonDimension);
+        password.setToolTipText("Create your password");
 
         add(userName);
         add(password);
