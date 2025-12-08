@@ -35,7 +35,6 @@ public class PanelControl extends JPanel implements ActionListener {
 
     public void configuratePanelControl()
     {
-
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         mainTextLogic();
@@ -81,7 +80,6 @@ public class PanelControl extends JPanel implements ActionListener {
     {
 
         userName.setFont(FontPalette.READING_FONT);
-        //userName.setText("Username");
         userName.setPreferredSize(buttonDimension);
 
         password.setFont(FontPalette.READING_FONT);
@@ -92,21 +90,17 @@ public class PanelControl extends JPanel implements ActionListener {
 
     public void buttonSizes()
     {
-        //signInButton.setSize(buttonDimension);
         createAccountButton.setSize(buttonDimension);
     }
 
     public void buttonDesign()
     {
-        //signInButton.setFont(FontPalette.READING_FONT);
-
         createAccountButton.setFont(FontPalette.READING_FONT);
     }
 
     public void buttonRowLogic()
     {
         buttonRow = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 30));
-        //buttonRow.add(signInButton);
         buttonRow.add(createAccountButton);
         add(buttonRow);
     }
@@ -133,15 +127,6 @@ public class PanelControl extends JPanel implements ActionListener {
 
     public void buttonsActionListener()
     {
-        /*signInButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                System.out.println("Clicked");
-            }
-        });
-         */
-
         createAccountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
