@@ -53,6 +53,9 @@ public class PanelControl extends JPanel implements ActionListener {
         mainText = new JLabel("Bank of Rankov");
         mainText.setFont(FontPalette.MAIN_FONT);
         mainText.setForeground(ColorPalette.MAIN_COLOR);
+        mainText.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        mainText.setBorder(new EmptyBorder(10,0,10,0));
 
         add(mainText);
     }
@@ -60,20 +63,21 @@ public class PanelControl extends JPanel implements ActionListener {
     public void welcomeTextLogic()
     {
         welcomeText = new JLabel("Welcome to the bank of Rankov");
-        welcomeText.setHorizontalAlignment(SwingConstants.CENTER);
-        welcomeText.setBorder(new EmptyBorder(20,0,20,0));
+        welcomeText.setAlignmentX(Component.CENTER_ALIGNMENT);
+        welcomeText.setBorder(new EmptyBorder(10,0,10,0));
 
         add(welcomeText, BorderLayout.CENTER);
     }
 
     public void logoLogic()
     {
+        logo.setDescription("This is the logo of my fictional banking company");
+
         imageLogo = new JLabel();
         imageLogo.setIcon(logo);
-        imageLogo.setHorizontalAlignment(SwingConstants.CENTER);
-        add(imageLogo, BorderLayout.CENTER);
+        imageLogo.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        logo.setDescription("This is the logo of my fictional banking company");
+        add(imageLogo, BorderLayout.CENTER);
     }
 
     public void inputTextFieldLogic()
