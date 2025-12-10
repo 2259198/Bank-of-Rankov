@@ -1,5 +1,7 @@
 package View;
 
+import Model.Model;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -144,6 +146,32 @@ public class PanelControl extends JPanel implements ActionListener {
         createAccountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                String utilisateur = userName.getText();
+                String pass = password.getText();
+
+                if(utilisateur.isEmpty() || pass.isEmpty())
+                {
+                    System.out.println("Nothing has been entered, please enter something");
+                    return;
+                }
+
+                Model model = Model.getInstance();
+
+                // Vérifier si l'utilisateur existe déjà
+                if (model.utilisateurExiste(utilisateur)) {
+                    System.out.println("Error : this user already exists");
+                }
+                else {
+                    model.ajouterUtilisateur(utilisateur, pass);
+                    System.out.println("Your account was created with success");
+
+                    userName.setText("");
+                    password.setText("");
+
+                    model.printAllUsers();
+                }
+
                 createAccountPanel.setVisible(false);
             }
         });
