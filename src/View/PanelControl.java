@@ -22,7 +22,8 @@ public class PanelControl extends JPanel implements ActionListener {
     private JPanel createAccountPanel;
 
     JTextField userName = new JTextField(1);
-    JTextField password = new JTextField(1);
+    JPasswordField password = new JPasswordField(1);
+
 
     //JButton signInButton = new JButton("Sign in");
     JButton createAccountButton = new JButton("Create account");
@@ -95,6 +96,7 @@ public class PanelControl extends JPanel implements ActionListener {
         password.setFont(FontPalette.READING_FONT);
         password.setPreferredSize(buttonDimension);
         password.setToolTipText("Create your password");
+        password.setEchoChar('*');
 
         textFieldRow = new JPanel();
         textFieldRow.setLayout(new BoxLayout(textFieldRow, BoxLayout.Y_AXIS));
