@@ -141,7 +141,6 @@ public class PanelControl extends JPanel implements ActionListener {
 
     public void buttonsActionListener()
     {
-
         createAccountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
