@@ -14,6 +14,7 @@ public class PanelControl extends JPanel implements ActionListener {
     JLabel imageLogo;
     JLabel welcomeText;
     JPanel buttonRow;
+    JPanel textFieldRow;
 
     private MainFrame mainFrame;
     private JPanel createAccountPanel;
@@ -93,8 +94,12 @@ public class PanelControl extends JPanel implements ActionListener {
         password.setPreferredSize(buttonDimension);
         password.setToolTipText("Create your password");
 
-        add(userName);
-        add(password);
+        textFieldRow = new JPanel();
+        textFieldRow.setLayout(new BoxLayout(textFieldRow, BoxLayout.Y_AXIS));
+
+        textFieldRow.add(userName);
+        textFieldRow.add(password);
+        add(textFieldRow);
     }
 
     public void buttonSizes()
