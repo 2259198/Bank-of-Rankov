@@ -7,8 +7,6 @@ import java.awt.event.ActionListener;
 
 public class SignInPanelControl extends JPanel {
 
-    private MainFrame mainFrame;
-
     JTextField username = new JTextField();
     JTextField passwordConfirmation = new JTextField();
 

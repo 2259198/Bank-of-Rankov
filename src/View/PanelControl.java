@@ -20,6 +20,7 @@ public class PanelControl extends JPanel implements ActionListener {
 
     private MainFrame mainFrame;
     private JPanel createAccountPanel;
+    private SignInPanelControl signInPanelControl;
 
     JTextField userName = new JTextField(1);
     JPasswordField password = new JPasswordField(1);
@@ -44,10 +45,9 @@ public class PanelControl extends JPanel implements ActionListener {
         logoLogic();
         welcomeTextLogic();
         inputTextFieldLogic();
-        buttonSizes();
         inputTextFieldActionListener();
         buttonsActionListener();
-        buttonDesign();
+        buttonDesignLogic();
         buttonRowLogic();
     }
 
@@ -65,7 +65,7 @@ public class PanelControl extends JPanel implements ActionListener {
 
     public void welcomeTextLogic()
     {
-        welcomeText = new JLabel("Welcome to the bank of Rankov");
+        welcomeText = new JLabel("Welcome to the bank of Rankov !");
         welcomeText.setAlignmentX(Component.CENTER_ALIGNMENT);
         welcomeText.setBorder(new EmptyBorder(10,0,10,0));
 
@@ -108,14 +108,14 @@ public class PanelControl extends JPanel implements ActionListener {
         add(textFieldRow);
     }
 
-    public void buttonSizes()
+    public void buttonDesignLogic()
     {
         createAccountButton.setSize(buttonDimension);
-    }
-
-    public void buttonDesign()
-    {
         createAccountButton.setFont(FontPalette.READING_FONT);
+        createAccountButton.setBackground(ColorPalette.MAIN_COLOR);
+        createAccountButton.setForeground(ColorPalette.SECONDARY_COLOR);
+        createAccountButton.setBorderPainted(false);
+        createAccountButton.setMargin(new Insets(15,15,15,15));
     }
 
     public void buttonRowLogic()
@@ -176,6 +176,8 @@ public class PanelControl extends JPanel implements ActionListener {
                 }
 
                 createAccountPanel.setVisible(false);
+                signInPanelControl.setVisible(true);
+                signInPanelControl.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
             }
         });
     }

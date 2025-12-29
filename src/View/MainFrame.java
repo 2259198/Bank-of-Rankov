@@ -60,9 +60,6 @@ public class MainFrame extends JFrame implements Runnable {
     public void borderIdentification()
     {
         signInAccountPanel.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
-        //mainPanel.setBorder(BorderFactory.createLineBorder(Color.black,3));
-        //createAccountPanel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
-        //footerPanel.setBorder(BorderFactory.createLineBorder(Color.RED, 3));
     }
 
     public void mainPanel()
