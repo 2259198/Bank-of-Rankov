@@ -26,7 +26,7 @@ public class PanelControl extends JPanel implements ActionListener {
     JPasswordField password = new JPasswordField(1);
 
     //JButton signInButton = new JButton("Sign in");
-    JButton createAccountButton = new JButton("Create account");
+    JButton createAccountButton = new RoundedButton("Create account");
 
     ImageIcon logo = new ImageIcon("src/Images/Logo.png");
 
@@ -114,8 +114,10 @@ public class PanelControl extends JPanel implements ActionListener {
         createAccountButton.setFont(FontPalette.READING_FONT);
         createAccountButton.setBackground(ColorPalette.MAIN_COLOR);
         createAccountButton.setForeground(ColorPalette.SECONDARY_COLOR);
-        createAccountButton.setBorderPainted(false);
         createAccountButton.setMargin(new Insets(15,15,15,15));
+
+        createAccountButton.setBorderPainted(false);
+
     }
 
     public void buttonRowLogic()
