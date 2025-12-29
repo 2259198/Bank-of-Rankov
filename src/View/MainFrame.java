@@ -80,7 +80,7 @@ public class MainFrame extends JFrame implements Runnable {
 
     public void footerPanel()
     {
-        footerPanel.setPreferredSize(new Dimension(screenSize.width, 100));
+        footerPanel.setPreferredSize(new Dimension(screenSize.width, screenSize.height / 7));
         footerPanel.setBackground(ColorPalette.MAIN_COLOR);
         footerPanel.add(footerText);
     }

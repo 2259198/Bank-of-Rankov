@@ -151,23 +151,22 @@ public class PanelControl extends JPanel implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String utilisateur = userName.getText();
+                String user = userName.getText();
                 String pass = password.getText();
 
-                if(utilisateur.isEmpty() || pass.isEmpty())
+                if(user.isEmpty() || pass.isEmpty())
                 {
-                    System.out.println("Nothing has been entered, please enter something");
+                    JOptionPane.showMessageDialog(null,"Nothing has been entered, please enter something");
                     return;
                 }
 
                 Model model = Model.getInstance();
 
-                // Vérifier si l'utilisateur existe déjà
-                if (model.utilisateurExiste(utilisateur)) {
-                    System.out.println("Error : this user already exists");
+                if (model.userExists(user)) {
+                    JOptionPane.showMessageDialog(null,"Sorry, this username already exits. Please try another one.");
                 }
                 else {
-                    model.ajouterUtilisateur(utilisateur, pass);
+                    model.ajouterUtilisateur(user, pass);
                     System.out.println("Your account was created with success");
 
                     userName.setText("");

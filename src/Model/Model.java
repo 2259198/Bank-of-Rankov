@@ -24,7 +24,7 @@ public class Model {
         System.out.println("Utilisateur ajouté :" + utilisateur);
     }
 
-    public boolean utilisateurExiste(String utilisateur)
+    public boolean userExists(String utilisateur)
     {
         return utilisateurs.contains(utilisateur);
     }
