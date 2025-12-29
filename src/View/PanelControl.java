@@ -24,7 +24,6 @@ public class PanelControl extends JPanel implements ActionListener {
     JTextField userName = new JTextField(1);
     JPasswordField password = new JPasswordField(1);
 
-
     //JButton signInButton = new JButton("Sign in");
     JButton createAccountButton = new JButton("Create account");
 
@@ -79,8 +78,11 @@ public class PanelControl extends JPanel implements ActionListener {
 
         imageLogo = new JLabel();
         imageLogo.setIcon(logo);
+        imageLogo.setHorizontalAlignment(SwingConstants.CENTER);
+        imageLogo.setVerticalAlignment(SwingConstants.CENTER);
         imageLogo.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        imageLogo.setPreferredSize(new Dimension(420, 420));
         add(imageLogo, BorderLayout.CENTER);
     }
 

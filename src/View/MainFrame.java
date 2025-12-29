@@ -34,6 +34,8 @@ public class MainFrame extends JFrame implements Runnable {
         this.setTitle("Bank of Rankov");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setBackground(ColorPalette.SECONDARY_COLOR);
+        Image img = new ImageIcon(this.getClass().getResource("/Images/Logo.png")).getImage();
+        this.setIconImage(img);
     }
 
     public void configurateDesign()
