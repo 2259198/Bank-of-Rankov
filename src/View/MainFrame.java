@@ -2,6 +2,7 @@ package View;
 
 import javax.swing.*;
 import java.awt.*;
+import java.time.LocalDate;
 
 public class MainFrame extends JFrame implements Runnable {
 
@@ -13,8 +14,10 @@ public class MainFrame extends JFrame implements Runnable {
     JPanel signInAccountPanel = new JPanel();
     JPanel footerPanel = new JPanel(new GridBagLayout());
 
-
     JLabel footerText;
+
+    int currentYear = LocalDate.now().getYear();
+
 
     @Override
     public void run()
@@ -30,6 +33,7 @@ public class MainFrame extends JFrame implements Runnable {
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setTitle("Bank of Rankov");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setBackground(ColorPalette.SECONDARY_COLOR);
     }
 
     public void configurateDesign()
@@ -45,7 +49,7 @@ public class MainFrame extends JFrame implements Runnable {
 
     public void fontsLogic()
     {
-        footerText = new JLabel("© All rights reserved to Alexander Rankov 2025.");
+        footerText = new JLabel("© " + currentYear + " All rights reserved to Alexander Rankov.");
         footerText.setFont(FontPalette.FOOTER_FONT);
         footerText.setVerticalAlignment(SwingConstants.CENTER);
         footerText.setForeground(ColorPalette.SECONDARY_COLOR);
@@ -53,10 +57,10 @@ public class MainFrame extends JFrame implements Runnable {
 
     public void borderIdentification()
     {
-        mainPanel.setBorder(BorderFactory.createLineBorder(Color.black,3));
-        createAccountPanel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
         signInAccountPanel.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
-        footerPanel.setBorder(BorderFactory.createLineBorder(Color.RED, 3));
+        //mainPanel.setBorder(BorderFactory.createLineBorder(Color.black,3));
+        //createAccountPanel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 2));
+        //footerPanel.setBorder(BorderFactory.createLineBorder(Color.RED, 3));
     }
 
     public void mainPanel()
