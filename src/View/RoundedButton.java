@@ -22,7 +22,8 @@ public class RoundedButton extends JButton {
 
         if (getModel().isPressed()) {
             g2.setColor(getBackground().darker());
-        } else {
+        }
+        else {
             g2.setColor(getBackground());
         }
 

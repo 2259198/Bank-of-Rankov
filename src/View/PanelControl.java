@@ -25,7 +25,6 @@ public class PanelControl extends JPanel implements ActionListener {
     JTextField userName = new JTextField(1);
     JPasswordField password = new JPasswordField(1);
 
-    //JButton signInButton = new JButton("Sign in");
     JButton createAccountButton = new RoundedButton("Create account");
 
     ImageIcon logo = new ImageIcon("src/Images/Logo.png");
